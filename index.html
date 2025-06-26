@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página personal de Bridget Bellido Rosas - Ingeniería Industrial en la UCSP">
+  <title>Bridget Bellido Rosas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      color: #1a1a1a;
+    }
+    header {
+      background-color: #ff7043;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffe0b2;
+      display: flex;
+      justify-content: center;
+    }
+    nav button {
+      background: none;
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: #bf360c;
+    }
+    nav button:hover, nav button.active {
+      background-color: #ffcc80;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+    }
+    section.active {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #ff7043;
+      color: white;
+    }
+    a {
+      color: #e64a19;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bridget Bellido Rosas</h1>
+    <p>Estudiante de Ingeniería Industrial - UCSP</p>
+  </header>
+  <nav>
+    <button type="button" data-section="home" class="active">Inicio</button>
+    <button type="button" data-section="universidad">Universidad</button>
+    <button type="button" data-section="carrera">Carrera</button>
+    <button type="button" data-section="curso">Curso</button>
+  </nav>
+
+  <main>
+    <section id="home" class="active">
+      <h2>Bienvenida</h2>
+      <p>Hola, soy Bridget Bellido Rosas, soy estudiante en la UCSP de la carrera de Ingeniería Industrial, tengo 19 años y me gustaría ser una buena y exitosa profesional en un futuro.</p>
+    </section>
+
+    <section id="universidad">
+      <h2>Universidad Católica San Pablo (UCSP)</h2>
+      <p>La UCSP es una universidad privada ubicada en Arequipa, Perú. Destaca por su formación integral y sólida base ética.</p>
+      <p>Visita su página oficial: <a href="https://ucsp.edu.pe" target="_blank">ucsp.edu.pe</a></p>
+    </section>
+
+    <section id="carrera">
+      <h2>Ingeniería Industrial</h2>
+      <p>La carrera busca formar profesionales capaces de diseñar, mejorar e implementar sistemas productivos y administrativos eficientes.</p>
+      <p>Más información en: <a href="https://ucsp.edu.pe/carreras/ingenieria-industrial/" target="_blank">Carrera de Ingeniería Industrial UCSP</a></p>
+    </section>
+
+    <section id="curso">
+      <h2>Curso de Informática</h2>
+      <p>Este sitio web ha sido desarrollado como parte del curso de Informática. Mi profesor es el Ing. Ernesto Cuadros Vargas.</p>
+      <p>Perfil de LinkedIn del profesor: <a href="https://www.linkedin.com/in/ecuadrosv?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Ernesto Cuadros Vargas</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bridget Bellido Rosas</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('nav button').forEach(button => {
+      button.addEventListener('click', function () {
+        const id = this.dataset.section;
+
+        document.querySelectorAll('section').forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+
+        document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
